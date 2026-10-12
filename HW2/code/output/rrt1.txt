@@ -1,5 +1,0 @@
-/home/gautam02/Gautam/CMU/Courses/Sem 3/16 782 Planning & Decision Making for Robotics/Assignments/16782-HW2/code/maps/map1.txt
-1.5708,0.785398,1.5708,0.785398,1.5708,
-1.32893,1.48714,3.82545,1.78222,5.40041,
-0.56152,1.79767,3.8536,2.50861,4.47261,
-0.392699,2.35619,3.14159,2.82743,4.71239,
