@@ -1,0 +1,20 @@
+Symbols: Bot, K, P1, P2, R1, R2, R3, R4
+Initial conditions: Room(R1), Room(R2), Room(R3), Room(R4), Connected(R1,R2), Connected(R2,R1), Connected(R2,R3), Connected(R3,R2), Connected(R3,R4), Connected(R4,R3), Open(R1,R2), Open(R2,R1), Open(R3,R4), Open(R4,R3), Locked(R2,R3), Locked(R3,R2), RobotAt(R2), HandEmpty(Bot), At(K,R1), At(P1,R1), At(P2,R2)
+Goal conditions: At(P1,R4), At(P2,R4)
+
+Actions:
+        Move(x,y)
+        Preconditions: Room(x), Room(y), RobotAt(x), Connected(x,y), Open(x,y)
+        Effects: RobotAt(y), !RobotAt(x)
+
+        Unlock(x,y)
+        Preconditions: Room(x), Room(y), RobotAt(x), Connected(x,y), Locked(x,y), Holding(K)
+        Effects: Open(x,y), Open(y,x), !Locked(x,y), !Locked(y,x)
+
+        Pick(o,r)
+        Preconditions: Room(r), RobotAt(r), At(o,r), HandEmpty(Bot)
+        Effects: Holding(o), !At(o,r), !HandEmpty(Bot)
+
+        Drop(o,r)
+        Preconditions: Room(r), RobotAt(r), Holding(o)
+        Effects: At(o,r), HandEmpty(Bot), !Holding(o)
